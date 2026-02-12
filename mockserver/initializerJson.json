@@ -164,4 +164,37 @@
     "httpResponse": {
       "statusCode": 200,
       "headers": [{ "name": "Content-Type", "values": ["application/json"] }],
-      "body": "[{\"sucesso\":\"1\",\"msg\":\"\",\"dados\":[{\"id\":\"20\",\"operacao\":\"LV\",\"situacao_id_locacao\":\"51\",\"situacao_locacao\":\"VERIFICAÇÃO\",\_]()]()
+      "body": "[{\"sucesso\":\"1\",\"msg\":\"\",\"dados\":[{\"id\":\"20\",\"operacao\":\"LV\",\"situacao_id_locacao\":\"51\",\"situacao_locacao\":\"VERIFICAÇÃO\",\"situacao_id_venda\":\"11\",\"situacao_venda\":\"RESERVADO\",\"situacao_id_empreendimento\":\"0\",\"situacao_empreendimento\":\"\",\"captador\":{\"L\":[{\"id_captador\":\"-10\",\"nome\":\"Mirela de Cá Magnusson\",\"percentual\":\"70.00\",\"email\":\"suporte4@kurole.com, kuroleteste@gmail.com\",\"celular\":\"(16) 99349-8668\"}],\"V\":[{\"id_captador\":\"-10\",\"nome\":\"Mirela de Cá Magnusson\",\"percentual\":\"100.00\",\"email\":\"suporte4@kurole.com, kuroleteste@gmail.com\",\"celular\":\"(16) 99349-8668\"}]}}]}]"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/kurole_include/api/webservice/escopos/",
+      "queryStringParameters": [
+        { "name": "ws_destino", "values": ["IMOVEIS_DADOS_INTEGRA"] },
+        { "name": "flag_exibe_endereco", "values": ["1"] }
+      ],
+      "headers": [{ "name": "Authorization", "values": ["Bearer .*"] }]
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": [{ "name": "Content-Type", "values": ["application/json"] }],
+      "body": "[{\"sucesso\":\"1\",\"msg\":\"\",\"dados\":[{\"id\":\"20\",\"operacao\":\"LV\",\"situacao_id_locacao\":\"51\",\"situacao_locacao\":\"VERIFICAÇÃO\",\"situacao_id_venda\":\"11\",\"situacao_venda\":\"RESERVADO\",\"situacao_id_empreendimento\":\"0\",\"situacao_empreendimento\":\"\",\"tipo_mae\":\"Apartamento\",\"tipo_imovel\":\"Cobertura\",\"endereco\":\"Avenida Caramuru\",\"edi_cond\":\"Alphavile\",\"numero\":\"2200\",\"complemento\":\"Cayman\",\"bairro\":\"Alphaville\",\"cidade\":\"Ribeirão Preto\",\"estado\":\"SP\",\"zona\":\"Zona Sul\",\"captador\":{\"L\":[{\"id_captador\":\"-10\",\"nome\":\"Mirela de Cá Magnusson\",\"percentual\":\"70.00\",\"email\":\"suporte4@kurole.com, kuroleteste@gmail.com\",\"celular\":\"(16) 99349-8668\"}],\"V\":[{\"id_captador\":\"-10\",\"nome\":\"Mirela de Cá Magnusson\",\"percentual\":\"100.00\",\"email\":\"suporte4@kurole.com, kuroleteste@gmail.com\",\"celular\":\"(16) 99349-8668\"}]}}]}]"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "PUT",
+      "path": "/kurole_include/api/webservice/leads/leads.php",
+      "headers": [
+        { "name": "Authorization", "values": ["Bearer .*"] }
+      ]
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": [{ "name": "Content-Type", "values": ["application/json"] }],
+      "body": "[{\"sucesso\":1,\"msg_erro\":[],\"dados\":{\"id_registro\":\"40291\"}}]"
+    }
+  }
+]
