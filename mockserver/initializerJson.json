@@ -1,7 +1,4 @@
 [
-  // =========================================================
-  // 0) HEALTH (opcional)
-  // =========================================================
   {
     "httpRequest": { "method": "GET", "path": "/health" },
     "httpResponse": {
@@ -10,12 +7,6 @@
       "body": "{\"status\":\"ok\"}"
     }
   },
-
-  // =========================================================
-  // 1) AGENDA VISITA - LISTAR DADOS (GET)
-  // ws_destino=AGENDA_VISITA_LISTAR_DADOS
-  // Body: { operacao: 'L'|'V', ids_imoveis: ['9803','6803'] }
-  // =========================================================
   {
     "httpRequest": {
       "method": "GET",
@@ -31,12 +22,6 @@
       "body": "[{\"sucesso\":\"1\",\"msg\":\"Dados retornados com sucesso\",\"dados\":{\"inicio_visita\":[{\"id\":\"12\",\"nome\":\"O local será confirmado pelo corretor\",\"descricao\":\"\",\"tipo\":\"INICIO_NA_IMOBILIARIA\",\"endereco\":{\"imobiliaria\":\"Kurole - Centro\",\"estado\":\"SP\",\"cidade\":\"Pradópolis\",\"bairro\":\"Centro\",\"endereco\":\"Rua Tiradentes\",\"numero\":\"853\",\"complemento\":\"\"}},{\"id\":\"1\",\"nome\":\"A definir\",\"descricao\":\"\",\"tipo\":\"INICIO_EM_OUTRO_LOCAL\",\"endereco\":[]},{\"id\":\"4\",\"nome\":\"No imovel selecionado\",\"descricao\":\"\",\"tipo\":\"INICIO_NO_IMOVEL\",\"endereco\":[]}],\"dias_horarios_disponiveis\":[{\"data\":\"2026-02-13\",\"horarios\":[\"12:00\",\"14:00\"]},{\"data\":\"2026-02-14\",\"horarios\":[\"09:00\",\"10:00\"]}]}}]"
     }
   },
-
-  // =========================================================
-  // 2) AGENDA VISITA - AGENDAR/ALTERAR (POST)
-  // ws_destino=AGENDA_VISITA_AGENDAR
-  // Retorno: id_cliente, id_visita, operacao, processo
-  // =========================================================
   {
     "httpRequest": {
       "method": "POST",
@@ -55,15 +40,6 @@
       "body": "[{\"sucesso\":\"1\",\"msg\":\"Seu agendamento foi realizado com sucesso.\",\"dados\":{\"id_cliente\":\"1578785\",\"id_visita\":\"1075\",\"operacao\":\"L\",\"processo\":\"CRIACAO\"}}]"
     }
   },
-
-  // =========================================================
-  // 3) AGENDA VISITA - LISTAR VISITAS (GET)
-  // A doc está confusa no ws_destino aqui (aparece AGENDAR),
-  // então eu deixei compatível com:
-  //  - ws_destino=AGENDA_VISITA_LISTAR
-  //  - ws_destino=AGENDA_VISITA_AGENDAR (GET)  <-- fallback
-  // Body exemplo: { "id_cliente": "1578785", "situacao": "PENDENTE" }
-  // =========================================================
   {
     "httpRequest": {
       "method": "GET",
@@ -94,12 +70,6 @@
       "body": "[{\"sucesso\":\"1\",\"msg\":\"Dados retornados com sucesso\",\"dados\":{\"total_de_visitas\":\"1\",\"visitas\":[]}}]"
     }
   },
-
-  // =========================================================
-  // 4) AGENDA VISITA - CANCELAR (PUT)
-  // ws_destino=AGENDA_VISITA_CANCELAR
-  // Body: { id_cliente, id_visita, motivo }
-  // =========================================================
   {
     "httpRequest": {
       "method": "PUT",
@@ -118,11 +88,6 @@
       "body": "[{\"sucesso\":\"1\",\"msg\":\"Agendamento cancelado com sucesso\",\"dados\":[]}]"
     }
   },
-
-  // =========================================================
-  // 5) CAPTAÇÃO - OBTER DADOS (GET)
-  // ws_destino=CAPTACAO_OBTER_DADOS
-  // =========================================================
   {
     "httpRequest": {
       "method": "GET",
@@ -138,12 +103,6 @@
       "body": "[{\"sucesso\":\"1\",\"msg\":\"\",\"dados\":[{\"id\":\"5\",\"nome\":\"Captação de Locação\",\"id_assunto\":\"377\",\"data_now\":\"2020-11-17 15:48:27\",\"usuario\":\"desenvolvimento10\"},{\"id\":\"7\",\"nome\":\"Captação de Venda\",\"id_assunto\":\"431\",\"data_now\":\"2020-11-17 15:49:05\",\"usuario\":\"desenvolvimento10\"}]}]"
     }
   },
-
-  // =========================================================
-  // 6) CAPTAÇÃO - INICIAR FLUXO (POST ou GET)
-  // ws_destino=CAPTACAO_INICIAR_FLUXO
-  // (A doc fala GET mas lista campos como POST*)
-  // =========================================================
   {
     "httpRequest": {
       "method": "POST",
@@ -177,12 +136,6 @@
       "body": "[{\"sucesso\":\"1\",\"msg\":\"\",\"dados\":[{\"id_captacao_imovel\":\"18480\"}]}]"
     }
   },
-
-  // =========================================================
-  // 7) CLIENTES - CONSULTAR (GET)
-  // ws_destino=CLIENTES_DADOS_INTEGRA
-  // pode filtrar por: clientes_id / clientes_celular / clientes_cpf_cnpj
-  // =========================================================
   {
     "httpRequest": {
       "method": "GET",
@@ -198,12 +151,6 @@
       "body": "[{\"sucesso\":\"1\",\"msg\":\"\",\"dados\":[{\"id\":\"1572993\",\"nome\":\"Marco Aurélio Moretto\",\"email\":\"job@kurole.com\",\"cnpj\":\"\",\"cpf\":\"27731491811\",\"celular\":\"(16) 99774-9443\",\"celular_2\":\"\",\"fone\":\"\",\"fone_residencial\":\"\",\"fone_2\":\"\",\"colaborador_contato\":\"-1\",\"contrato_locacao_locador\":[{\"CtrCod\":\"1\",\"CtrSeq\":\"0\",\"CtrDV\":\"8\",\"CtrStatus\":\"Rescindido\"}],\"contrato_locacao_locatario\":[{\"CtrCod\":\"1\",\"CtrSeq\":\"0\",\"CtrDV\":\"8\",\"CtrStatus\":\"Ativo\"}]}]}]"
     }
   },
-
-  // =========================================================
-  // 8) IMÓVEIS - CONSULTAR (GET)
-  // ws_destino=IMOVEIS_DADOS_INTEGRA
-  // flag_exibe_endereco: 0|1
-  // =========================================================
   {
     "httpRequest": {
       "method": "GET",
@@ -217,43 +164,4 @@
     "httpResponse": {
       "statusCode": 200,
       "headers": [{ "name": "Content-Type", "values": ["application/json"] }],
-      "body": "[{\"sucesso\":\"1\",\"msg\":\"\",\"dados\":[{\"id\":\"20\",\"operacao\":\"LV\",\"situacao_id_locacao\":\"51\",\"situacao_locacao\":\"VERIFICAÇÃO\",\"situacao_id_venda\":\"11\",\"situacao_venda\":\"RESERVADO\",\"situacao_id_empreendimento\":\"0\",\"situacao_empreendimento\":\"\",\"captador\":{\"L\":[{\"id_captador\":\"-10\",\"nome\":\"Mirela de Cá Magnusson\",\"percentual\":\"70.00\",\"email\":\"suporte4@kurole.com, kuroleteste@gmail.com\",\"celular\":\"(16) 99349-8668\"}],\"V\":[{\"id_captador\":\"-10\",\"nome\":\"Mirela de Cá Magnusson\",\"percentual\":\"100.00\",\"email\":\"suporte4@kurole.com, kuroleteste@gmail.com\",\"celular\":\"(16) 99349-8668\"}]}}]}]"
-    }
-  },
-  {
-    "httpRequest": {
-      "method": "GET",
-      "path": "/kurole_include/api/webservice/escopos/",
-      "queryStringParameters": [
-        { "name": "ws_destino", "values": ["IMOVEIS_DADOS_INTEGRA"] },
-        { "name": "flag_exibe_endereco", "values": ["1"] }
-      ],
-      "headers": [{ "name": "Authorization", "values": ["Bearer .*"] }]
-    },
-    "httpResponse": {
-      "statusCode": 200,
-      "headers": [{ "name": "Content-Type", "values": ["application/json"] }],
-      "body": "[{\"sucesso\":\"1\",\"msg\":\"\",\"dados\":[{\"id\":\"20\",\"operacao\":\"LV\",\"situacao_id_locacao\":\"51\",\"situacao_locacao\":\"VERIFICAÇÃO\",\"situacao_id_venda\":\"11\",\"situacao_venda\":\"RESERVADO\",\"situacao_id_empreendimento\":\"0\",\"situacao_empreendimento\":\"\",\"tipo_mae\":\"Apartamento\",\"tipo_imovel\":\"Cobertura\",\"endereco\":\"Avenida Caramuru\",\"edi_cond\":\"Alphavile\",\"numero\":\"2200\",\"complemento\":\"Cayman\",\"bairro\":\"Alphaville\",\"cidade\":\"Ribeirão Preto\",\"estado\":\"SP\",\"zona\":\"Zona Sul\",\"captador\":{\"L\":[{\"id_captador\":\"-10\",\"nome\":\"Mirela de Cá Magnusson\",\"percentual\":\"70.00\",\"email\":\"suporte4@kurole.com, kuroleteste@gmail.com\",\"celular\":\"(16) 99349-8668\"}],\"V\":[{\"id_captador\":\"-10\",\"nome\":\"Mirela de Cá Magnusson\",\"percentual\":\"100.00\",\"email\":\"suporte4@kurole.com, kuroleteste@gmail.com\",\"celular\":\"(16) 99349-8668\"}]}}]}]"
-    }
-  },
-
-  // =========================================================
-  // 9) LEADS - INSERIR (PUT)
-  // /kurole_include/api/webservice/leads/leads.php
-  // Retorno exemplo sucesso/erro conforme doc
-  // =========================================================
-  {
-    "httpRequest": {
-      "method": "PUT",
-      "path": "/kurole_include/api/webservice/leads/leads.php",
-      "headers": [
-        { "name": "Authorization", "values": ["Bearer .*"] }
-      ]
-    },
-    "httpResponse": {
-      "statusCode": 200,
-      "headers": [{ "name": "Content-Type", "values": ["application/json"] }],
-      "body": "[{\"sucesso\":1,\"msg_erro\":[],\"dados\":{\"id_registro\":\"40291\"}}]"
-    }
-  }
-]
+      "body": "[{\"sucesso\":\"1\",\"msg\":\"\",\"dados\":[{\"id\":\"20\",\"operacao\":\"LV\",\"situacao_id_locacao\":\"51\",\"situacao_locacao\":\"VERIFICAÇÃO\",\_]()]()
