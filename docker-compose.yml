@@ -2,7 +2,9 @@ services:
   ksi-mock:
     image: mockserver/mockserver:5.15.0
     restart: unless-stopped
+    ports:
+      - "18080:1080"
     environment:
       MOCKSERVER_INITIALIZATION_JSON_PATH: /config/initializerJson.json
     volumes:
-      - ./mockserver:/config:ro
+      - ./initializerJson.json:/config/initializerJson.json:ro
