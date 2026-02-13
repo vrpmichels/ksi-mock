@@ -5,4 +5,4 @@ services:
     environment:
       MOCKSERVER_INITIALIZATION_JSON_PATH: /config/initializerJson.json
     volumes:
-      - ./:/config:ro
+      - ./initializerJson.json:/config/initializerJson.json:ro
